@@ -3,7 +3,7 @@ import '../App.css';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import '../styles/index.sass';
-import {Button, Icon} from 'react-materialize';
+import {Button, Icon, Modal} from 'react-materialize';
 
 class App extends Component {
   componentDidMount(){
@@ -59,8 +59,9 @@ class App extends Component {
                   <p>Data: </p>
                   <Button waves='light'>
                     <Icon tiny>accessibility</Icon>
-                    <i class="material-icons">add</i>
                   </Button>
+                  <Button waves='light'>EDIT ME<Icon left>save</Icon></Button>
+                  
                 </div>
 
                 <div className="box-post">
