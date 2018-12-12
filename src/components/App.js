@@ -54,13 +54,18 @@ class App extends Component {
             <div className="s12">
               <div class="container-box-post">
                 <div className="box-post">
-                  <h3>Título</h3>
-                  <p>Autor: </p>
                   <p>Data: </p>
-                  <Button waves='light'>
-                    <Icon tiny>accessibility</Icon>
-                  </Button>
-                  <Button waves='light'>EDIT ME<Icon left>save</Icon></Button>
+                  <h4>Título</h4>
+                  <p>Autor: </p>
+                  
+                  
+                  <Button waves='light'>Gostei</Button>
+                  <Button waves='light'>Não Gostei</Button>
+                  <p>Votos: </p>
+                  <p>Comentários: </p>
+                  <Button waves='light'>Detalhes</Button>
+                  <Button waves='light'>Editar</Button>
+                  <Button waves='light'>Excluir</Button>
                   
                 </div>
 
