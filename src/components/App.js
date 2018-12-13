@@ -3,7 +3,7 @@ import '../App.css';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import '../styles/index.sass';
-import {Button, Icon, Modal} from 'react-materialize';
+import {Button} from 'react-materialize';
 
 class App extends Component {
   componentDidMount(){
