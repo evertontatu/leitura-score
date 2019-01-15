@@ -1,16 +1,37 @@
-import React, { Component } from 'react';
-import '../App.css';
-import 'materialize-css/dist/css/materialize.min.css';
-import M from 'materialize-css/dist/js/materialize.min.js';
-import '../styles/index.sass';
-import {Button} from 'react-materialize';
+import React, { Component } from 'react'
+import '../App.css'
+import 'materialize-css/dist/css/materialize.min.css'
+import M from 'materialize-css/dist/js/materialize.min.js'
+import '../styles/index.sass'
+import BoxPost from './posts/BoxPost'
+import { getCategoriesAPI } from '../utils/api'
+
 
 class App extends Component {
+
+  state = {
+    post: null
+  }
+
   componentDidMount(){
-      M.AutoInit();
+    const { store } = this.props
+
+    this.props.loadPosts()
+
+    store.subscribe(() => {
+      this.setState(() => {
+        post: store.getState()
+      })
+    })
+  }
+
+
+  componentDidMount(){
+    M.AutoInit();
   }
 
   render() {
+
     return (
       <div className="App">
         <nav>
@@ -53,36 +74,9 @@ class App extends Component {
           <div className="row">
             <div className="s12">
               <div class="container-box-post">
-                <div className="box-post">
-                  <p>Data: </p>
-                  <h4>Título</h4>
-                  <p>Autor: </p>
-                  
-                  
-                  <Button waves='light'>Gostei</Button>
-                  <Button waves='light'>Não Gostei</Button>
-                  <p>Votos: </p>
-                  <p>Comentários: </p>
-                  <Button waves='light'>Detalhes</Button>
-                  <Button waves='light'>Editar</Button>
-                  <Button waves='light'>Excluir</Button>
-                  
-                </div>
 
-                <div className="box-post">
-                  <h3>Title</h3>
-                  <p>Text content</p>
-                </div>
-
-                <div className="box-post">
-                  <h3>Title</h3>
-                  <p>Text content</p>
-                </div>
-
-                <div className="box-post">
-                  <h3>Title</h3>
-                  <p>Text content</p>
-                </div>
+                <BoxPost/>
+                
               </div>
             </div>
           </div>
